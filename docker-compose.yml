@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  docker-express:
+    build: .
+    ports:
+      - "5500:5500"
+    volumes:
+      - ./:/code/docker-express
+      - /code/docker-express/node_modules
+    image: docker-express-image
+    container_name: docker-express-container
+    env_file:
+      - ./.env
+  
+  mongo:
+    image: mongo:4.2
+    container_name: docker-express-mongo-container
+    volumes:
+      - /code/docker-express/data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=username
+      - MONGO_INITDB_ROOT_PASSWORD=password
