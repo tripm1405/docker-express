@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  docker-express:
+    image: docker-express-image
+    container_name: docker-express-container
+    build: .
+    ports:
+      - "5500:5500"
+    environment:
+      - PORT=5500
