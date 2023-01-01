@@ -2,11 +2,11 @@
 > docker-compose up -d --build
 
 #
-> docker-compose down -v
+> docker-compose -rmi local down -v
 
 # docker inspect [container]
 > docker inspect docker-express-mongo-container
-## NetworkSettings.Networks.tmp_default.IPAddress -> 172.31.0.2
+## NetworkSettings.Networks.tmp_default.IPAddress -> X.X.X.X
 
 # follow logs of service
 # docker-compose logs -f [service]
